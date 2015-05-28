@@ -12,7 +12,7 @@
         <title>ユーザー登録</title>
     </head>
     <body>
-        <form action ="/ad2932/RegisterUser" method="post">
+        <form method="post" action="/register">
          名前：<input type="text" name="name"><br>
          パスワード：<input type="password" name="pass"><br>
          <input type="submit" value="確認">
