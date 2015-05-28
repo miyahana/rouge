@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="model.Price"%>
+<%@ page import="jp.ac.tsuda.Price"%>
 <% Price getPrice = (Price) session.getAttribute("getPrice"); %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
     <body>
         <h1>注文確認</h1>
         <c:out value="${name}"/>さん、ログイン中
-        <a href ="/ad2932/WelcomeServlet">トップへ</a>
-        <a href ="/ad2932/Logout">ログアウト</a>
+        <a href ="/welcome.jsp">トップへ</a>
+        <a href ="/logout">ログアウト</a>
        
         
         <p>以下のご注文でよろしいでしょうか</p>
@@ -35,7 +35,7 @@
         <p>CHANEL         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= getPrice.getRouge5() %>個   <%= getPrice.getPrice5() %> 円</p>
         <p> KiSHiORiGiNAL   &nbsp;&nbsp;<%= getPrice.getRouge6() %>個   <%= getPrice.getPrice6() %> 円</p>
         <p>合計            <%= getPrice.getSumRouge() %>個 <%= getPrice.getSumPrice() %> 円</p>
-        <a href ="/ad2932/Done">決定</a>
+        <a href ="/done">決定</a>
    
     </body>
-</html
+</html>

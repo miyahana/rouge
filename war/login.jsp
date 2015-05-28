@@ -12,7 +12,7 @@
         <title>Rouge Store</title>
     </head>
     <body>
-        <form action ="/ad2932/LoginServlet" method="post">
+        <form action ="/login" method="post">
             名前:<input type="text" name="name"><br>
             パスワード:<input type="password" name="pass"><br>
             <input type="submit" value="ログイン">

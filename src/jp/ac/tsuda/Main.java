@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.jdo.*;
+import javax.servlet.http.*;
+//import model.User;
 
 /**
  *
@@ -21,19 +24,12 @@ public class Main extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
-        GetDataListLogic getMutterListLogic=new GetDataListLogic();
-        List<Data> dataList=getMutterListLogic.execute();
-        request.setAttribute("dataList", dataList);
-    
-          
-        HttpSession session = request.getSession();
-        String name=(String)session.getAttribute("name");
-        
-         if(name==null){
-            response.sendRedirect("/ad2932/WelcomeServet/");
+    	HttpSession session = request.getSession();
+    	String name = (String) session.getAttribute("name");
+    	if(name==null){
+            response.sendRedirect("/welcome.jsp");
         }else{
-            RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+            RequestDispatcher dispatcher=request.getRequestDispatcher("/main.jsp");
             dispatcher.forward(request,response);
         }
     }
@@ -70,7 +66,7 @@ public class Main extends HttpServlet {
                 request.setAttribute("errorMsg","つぶやきが入力されていません");
             
             }*/
-            RequestDispatcher dispatcher= request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+            RequestDispatcher dispatcher= request.getRequestDispatcher("/main.jsp");
             dispatcher.forward(request, response);
     }
     /**

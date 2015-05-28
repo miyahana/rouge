@@ -13,6 +13,6 @@
     </head>
     <body>
         <p>登録完了しました</p>
-       <a href="/ad2932/WelcomeServlet">戻る</a>
+       <a href="welcome.jsp">戻る</a>
     </body>
 </html>

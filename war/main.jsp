@@ -16,13 +16,13 @@
     <body>
         <h1>注文画面</h1>
         <c:out value="${name}"/>さん、ログイン中
-        <a href ="/ad2932/WelcomeServlet">トップへ</a>
-        <a href ="/ad2932/Logout">ログアウト</a>
+        <a href ="welcome.jsp">トップへ</a>
+        <a href ="/logout">ログアウト</a>
         <br>
         注文する個数を入力して確認ボタンを押してください。
         
-        <p><a href="/ad2932/ConfirmServlet"></a></p>
-        <form action ="/ad2932/ConfirmServlet" method="post">
+        <p><a href="/confirm"></a></p>
+        <form action ="/confirm" method="post">
             CANMAKE(550円)<input type="text" size="3" name="rouge1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             MAYBELLINE(1200円)<input type="text" size="3" name="rouge2">

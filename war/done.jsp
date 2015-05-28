@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>お買い上げありがとうございました</h1>
-        <a href ="/ad2932/WelcomeServlet">トップへ</a>
-        <a href ="/ad2932/Logout">ログアウト</a>
+        <a href ="/welcome.jsp">トップへ</a>
+        <a href ="/logout">ログアウト</a>
     </body>
 </html>

@@ -39,7 +39,7 @@ public class Done extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/done.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/done.jsp");
         dispatcher.forward(request, response);
     }
 
