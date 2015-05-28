@@ -13,6 +13,6 @@
     </head>
     <body>
         <p>ログアウトしました</p>
-        <a href="/ad2932/WelcomeServlet">トップへ</a>
+        <a href="/welcome.jsp">トップへ</a>
     </body>
 </html>

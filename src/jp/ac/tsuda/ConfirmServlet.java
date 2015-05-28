@@ -21,7 +21,7 @@ public class ConfirmServlet extends HttpServlet {
         String forwardPath = null;
         String action = request.getParameter("action");
         if(action==null) {
-            forwardPath = "/WEB-INF/jsp/main.jsp";
+            forwardPath = "/main.jsp";
         }
         else if(action.equals("done")) {
             HttpSession session = request.getSession();
@@ -31,7 +31,7 @@ public class ConfirmServlet extends HttpServlet {
             //logic.register(registerUser);
             //
             session.removeAttribute("getPrice");
-            forwardPath = "/WEB-INF/jsp/confirm.jsp";
+            forwardPath = "/confirm.jsp";
         }
         
         
@@ -44,6 +44,7 @@ public class ConfirmServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        
         String rouge1 = request.getParameter("rouge1");
         String rouge2 = request.getParameter("rouge2");
         String rouge3 = request.getParameter("rouge3");
@@ -59,7 +60,7 @@ public class ConfirmServlet extends HttpServlet {
         session.setAttribute("getPrice",getPrice);
         
             
-            RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/jsp/confirm.jsp");
+            RequestDispatcher dispatcher=request.getRequestDispatcher("/confirm.jsp");
             dispatcher.forward(request,response);
       
             //response.sendRedirect("/ad2932/LoginServlet");

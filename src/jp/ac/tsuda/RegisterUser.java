@@ -58,22 +58,7 @@ public class RegisterUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-           String forwardPath = null;
-            String action = request.getParameter("action");
-            if(action == null) {
-                forwardPath = "/WEB-INF/jsp/registerForm.jsp";
-            }else if(action.equals("done")){
-                HttpSession session =  request.getSession();
-                Data registerUser = (Data) session.getAttribute("registerUser");
-                
-                RegisterUserLogic logic = new RegisterUserLogic();
-                logic.register(registerUser);
-                
-                session.removeAttribute("registerUser");
-                
-                forwardPath = "/WEB-INF/jsp/registerDone.jsp";
-            }
-            
+           String forwardPath  = "/registerForm.jsp";
             RequestDispatcher dispatcher = request.getRequestDispatcher(forwardPath);
             dispatcher.forward(request, response);
     }
@@ -100,7 +85,7 @@ public class RegisterUser extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("registerUser", registerUser);
             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registerConfirm.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/registerConfirm.jsp");
             dispatcher.forward(request,response);
     }
 

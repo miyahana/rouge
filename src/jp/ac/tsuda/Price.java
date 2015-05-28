@@ -1,6 +1,8 @@
 package jp.ac.tsuda;
 
-public class Price {
+import java.io.Serializable;
+
+public class Price implements Serializable{
     private int r1;
     private int r2;
     private int r3;

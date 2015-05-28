@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="jp.ac.tsuda.Data" %>
 
 <%
 Data registerUser = (Data) session.getAttribute("registerUser");
@@ -21,7 +22,7 @@ Data registerUser = (Data) session.getAttribute("registerUser");
         名前：<%= registerUser.getUserName() %><br>
         パスワード：<%= registerUser.getPass() %><br>
         </p>
-        <a href="/ad2932/RegisterUser">戻る</a>
-        <a href="/ad2932/RegisterUser?action=done">登録</a>
+	<a href="/register">戻る</a>
+	<a href="/register1">登録</a>
     </body>
 </html>

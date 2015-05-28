@@ -13,8 +13,8 @@
     </head>
     <body>
         <ul>
-        <li><a href="/ad2932/LoginServlet">ログイン</a></li>
-        <li><a href="/ad2932/RegisterUser">ユーザー登録</a></li>
+        <li><a href="login.jsp">ログイン</a></li>
+        <li><a href="registerForm.jsp">ユーザー登録</a></li>
         </ul>
     </body>
 </html>
