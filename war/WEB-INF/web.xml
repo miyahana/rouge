@@ -68,7 +68,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Done</servlet-name>
 		<url-pattern>/done</url-pattern>
 	</servlet-mapping>
+				<servlet>
+		<servlet-name>Record</servlet-name>
+		<servlet-class>jp.ac.tsuda.RecordServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Record</servlet-name>
+		<url-pattern>/record</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>welcome.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
+	
