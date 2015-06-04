@@ -20,6 +20,6 @@
         <p>ようこそ <c:out value="${name}"/>さん</p>
         <a href="/main">注文画面へ</a>
         <a href="/logout">ログアウト</a>
-        <a href="">購入履歴</a>
+        <a href="/record.html">購入履歴</a>
     </body>
 </html>
