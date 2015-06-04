@@ -1,6 +1,7 @@
 package jp.ac.tsuda;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 
 /**
  *
@@ -31,11 +35,21 @@ public class Logout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	UserService userService = UserServiceFactory.getUserService();
+
+        String thisURL = request.getRequestURI();
         HttpSession session = request.getSession();
         session.invalidate();
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logout.jsp");
-        dispatcher.forward(request, response);
+        if (request.getUserPrincipal() != null) {
+        response.getWriter().println("<p>Hello, " +
+                request.getUserPrincipal().getName() +
+                "!  You can <a href=\"" +
+                userService.createLogoutURL(thisURL) +
+                "\">sign out</a>.</p>");
+        }else{
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/logout.jsp");
+        	dispatcher.forward(request, response);
+        }
     }
 
     /**

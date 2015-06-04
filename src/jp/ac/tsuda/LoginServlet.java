@@ -2,17 +2,21 @@ package jp.ac.tsuda;
 
 import java.io.*;
 import java.util.*;
-
 import java.io.PrintWriter;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import javax.jdo.*;
 import javax.servlet.http.*;
+
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+
+
 
 /**
  *
@@ -62,9 +66,28 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher(
+        /*RequestDispatcher dispatcher = request.getRequestDispatcher(
                 "/login.jsp");
         dispatcher.forward(request,response);
+        */
+    	UserService userService = UserServiceFactory.getUserService();
+
+        String thisURL = request.getRequestURI();
+
+        response.setContentType("text/html");
+        if (request.getUserPrincipal() != null) {
+        	HttpSession session = request.getSession();
+        	String name = request.getUserPrincipal().getName();
+        	session.setAttribute("name",name);
+        	RequestDispatcher dispatcher = request.getRequestDispatcher(
+                    "/loginOK.jsp");
+            dispatcher.forward(request,response);
+        } else {
+            response.getWriter().println("<p>Please <a href=\"" +
+                                     userService.createLoginURL(thisURL) +
+                                     "\">sign in</a>.</p>");
+        }
+    
     }
 
     /**
