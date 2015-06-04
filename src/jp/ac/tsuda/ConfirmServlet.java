@@ -53,7 +53,6 @@ public class ConfirmServlet extends HttpServlet {
         String rouge6 = request.getParameter("rouge6");
         
         
-        
         Price getPrice = new Price(rouge1,rouge2,rouge3,rouge4,rouge5,rouge6);
         
         HttpSession session = request.getSession();

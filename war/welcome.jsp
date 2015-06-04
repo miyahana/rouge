@@ -13,7 +13,7 @@
     </head>
     <body>
         <ul>
-        <li><a href="login.jsp">ログイン</a></li>
+        <li><a href="/login">ログイン</a></li>
         <li><a href="registerForm.jsp">ユーザー登録</a></li>
         </ul>
     </body>

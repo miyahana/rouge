@@ -2,11 +2,20 @@ package jp.ac.tsuda;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.jdo.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.*;
 
 /**
  *
@@ -39,6 +48,26 @@ public class Done extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	HttpSession session = request.getSession();
+    	String name = (String)session.getAttribute("userName");
+    	Price getPrice = (Price)session.getAttribute("getPrice");
+    	String userName = request.getParameter(name);
+    	for(int i=1;i < 7;i++){
+    		String rouge = request.getParameter("rouge"+i);
+    		int number =0;
+    		if(i==1)
+    		number = getPrice.getRouge1();
+    		if(number>0){
+    			Rouge r = new Rouge(userName,rouge,number);
+    			PersistenceManagerFactory factory = PMF.get();
+    			PersistenceManager manager = factory.getPersistenceManager();
+    			try {
+    				manager.makePersistent(r);
+    			} finally {
+    				manager.close();
+    			}
+    		}
+    	}
         RequestDispatcher dispatcher = request.getRequestDispatcher("/done.jsp");
         dispatcher.forward(request, response);
     }
