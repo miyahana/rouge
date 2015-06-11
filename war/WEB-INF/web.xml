@@ -85,11 +85,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/review</url-pattern>
 	</servlet-mapping>
 		<servlet>
-		<servlet-name>ReviewS</servlet-name>
+		<servlet-name>ReviewShow</servlet-name>
 		<servlet-class>jp.ac.tsuda.ReviewShowServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ReviewS</servlet-name>
+		<servlet-name>ReviewShow</servlet-name>
 		<url-pattern>/reviewShow</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>

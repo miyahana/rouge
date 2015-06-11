@@ -51,6 +51,7 @@ public class Done extends HttpServlet {
         String name = (String) session.getAttribute("name");
     	Price getPrice = (Price)session.getAttribute("getPrice");
     	//String userName = request.getParameter(name);
+
     	for(int i=1;i < 7;i++){
     		int number =0;
     		String rouge = "";

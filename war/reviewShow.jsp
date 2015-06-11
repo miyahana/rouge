@@ -19,6 +19,7 @@
         <p><%= rouge %> についてのレビューを書き込む</p>
 		<form action ="/reviewShow" method="post">
 		<input type="text" size="10" name="comment">
+		<input type="submit" value="送信">
 		</form>
 		<p>レビューの表示</p>
 	<table id ="datatable" border="1">
