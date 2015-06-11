@@ -76,6 +76,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Record</servlet-name>
 		<url-pattern>/record</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Review</servlet-name>
+		<servlet-class>jp.ac.tsuda.ReviewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Review</servlet-name>
+		<url-pattern>/review</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>ReviewS</servlet-name>
+		<servlet-class>jp.ac.tsuda.ReviewShowServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReviewS</servlet-name>
+		<url-pattern>/reviewShow</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>welcome.jsp</welcome-file>
 	</welcome-file-list>

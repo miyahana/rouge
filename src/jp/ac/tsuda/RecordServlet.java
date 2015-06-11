@@ -15,7 +15,6 @@ public class RecordServlet extends HttpServlet {
         PersistenceManager manager = factory.getPersistenceManager();
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        req.setCharacterEncoding("utf-8");
         String param1 = req.getParameter("id");
         PrintWriter out = resp.getWriter();
         List<Rouge> list = null;

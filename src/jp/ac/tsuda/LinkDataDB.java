@@ -46,4 +46,40 @@ public class LinkDataDB {
 	}
 	public static void delete(long id){
 	}
+	public static void create(Review data){
+		PersistenceManager manager = factory.getPersistenceManager();
+		try {
+            manager.makePersistent(data);
+        } finally {
+            manager.close();
+        }
+	}
+	public static Review read1(long id){
+		PersistenceManager manager = factory.getPersistenceManager();
+	        List<Review> list = null;
+	        try {
+                Review data = (Review)manager.getObjectById(Review.class,id);
+                list = new ArrayList();
+                list.add(data);
+            } catch(JDOObjectNotFoundException e){}
+	        return list.get(0);
+	}
+	public static List<Review> read1(){
+		PersistenceManager manager = factory.getPersistenceManager();
+        List<Review> list = null;
+        String query = "select from " + Review.class.getName();
+        try {
+        	list = (List<Review>)manager.newQuery(query).execute();
+        } catch(JDOObjectNotFoundException e){}
+        return list;
+	}
+	public static void update(long id,Review newData){
+		PersistenceManager manager = factory.getPersistenceManager();
+		Review data = (Review)manager.getObjectById(Review.class,id);
+        data.setUserName(newData.getUserName());
+        data.setComment(newData.getComment());
+        data.setId(id);
+        data.setDatetime(newData.getDatetime());
+        manager.close();
+	}
 }
