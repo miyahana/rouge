@@ -28,7 +28,7 @@ public class ReviewServlet extends HttpServlet{
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        String rouge = request.getParameter("radiobutton");
+        String rouge = request.getParameter("rouge");
         session.setAttribute("rouge", rouge);
         RequestDispatcher dispatcher=request.getRequestDispatcher("/reviewShow.jsp");
         dispatcher.forward(request,response);

@@ -79,7 +79,6 @@ public class LinkDataDB {
         data.setUserName(newData.getUserName());
         data.setComment(newData.getComment());
         data.setId(id);
-        data.setDatetime(newData.getDatetime());
         manager.close();
 	}
 }

@@ -17,7 +17,7 @@ public class Review implements Serializable{
 	
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private long id;
+    private Long id;
 	
 	@Persistent
     private String comment;
@@ -26,25 +26,22 @@ public class Review implements Serializable{
     private Date datetime;
    
     public Review(){}
-    public Review(String userName,int id,String comment){
+    public Review(String userName,String comment){
         this.userName = userName;
-        this.id = id;
+        this.comment = comment;
     }
-    public Review(String userName,int id,String comment,Date datetime){
+    public Review(String userName,Long id,String comment,Date datetime){
         this.userName = userName;
         this.id = id;
         this.comment = comment;
-        this.datetime = datetime;
     }
     public String getUserName() { return userName; }
-    public long getId() { return id; }
+    public Long getId() { return id; }
     public String getComment() {return comment; }
-    public Date getDatetime() { return datetime; }
     
     public void setUserName(String userName) { this.userName = userName;}
-    public void setId(long id){ this.id = id; }
+    public void setId(Long id){ this.id = id; }
     public void setComment(String comment){ this.comment = comment; }
-    public void setDatetime(Date datetime) { this.datetime = datetime; }
     
     
 }

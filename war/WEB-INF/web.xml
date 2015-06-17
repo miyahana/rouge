@@ -4,6 +4,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
 	<servlet>
 		<servlet-name>Rouge</servlet-name>
 		<servlet-class>jp.ac.tsuda.RougeServlet</servlet-class>
@@ -21,11 +22,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>Rouge</servlet-name>
+		<servlet-name>Rouge1</servlet-name>
 		<servlet-class>jp.ac.tsuda.RougeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Rouge</servlet-name>
+		<servlet-name>Rouge1</servlet-name>
 		<url-pattern>/register1</url-pattern>
 	</servlet-mapping>
 	<servlet>

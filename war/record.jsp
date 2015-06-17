@@ -16,7 +16,7 @@
 <%
 for(Rouge data:list){
 	long id = data.getId();
-	String userName=data.getUserName();
+	String userName = data.getUserName();
 	String rouge = data.getRouge();
 	int count = data.getNumber();
 %>
@@ -29,5 +29,6 @@ for(Rouge data:list){
 }
 %>
 </table>
+<a href="/loginOK.jsp">戻る</a>
 </body>
 </html>

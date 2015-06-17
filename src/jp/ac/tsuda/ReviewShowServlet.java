@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ReviewShowServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,14 +21,22 @@ public class ReviewShowServlet extends HttpServlet{
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+		
         request.setCharacterEncoding("UTF-8");
-        String text = request.getParameter("comment");
-        PersistenceManagerFactory factory = PMF.get();
-        PersistenceManager manager = factory.getPersistenceManager();
+        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         String param1 = request.getParameter("id");
-        PrintWriter out = response.getWriter();
-        List<Review> list = null;
+        HttpSession session =  request.getSession();
+        String comment = request.getParameter("comment");
+        String name = (String)session.getAttribute("name"); 
+        //PersistenceManagerFactory factory = PMF.get();
+        //PersistenceManager manager = factory.getPersistenceManager();
+        if(comment!=null){
+        Review review = new Review(name,comment);
+
+        LinkDataDB.create(review);
+        }
+        /*List<Review> list = null;
         if (param1 == null || param1 ==""){
             String query = "select from " + Review.class.getName();
             try {
@@ -48,8 +57,7 @@ public class ReviewShowServlet extends HttpServlet{
             }
         }
         res += "]";
-        out.println(res);
-        manager.close();
+        //manager.close();*/
         RequestDispatcher dispatcher=request.getRequestDispatcher("/reviewShow.jsp");
         dispatcher.forward(request,response);
 	}

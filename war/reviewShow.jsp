@@ -2,12 +2,12 @@
 <%@page import="com.google.appengine.api.users.UserService"%>
 <%@page import=" com.google.appengine.api.users.UserServiceFactory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% String rouge = (String) session.getAttribute("rouge"); %>
 <%@ page import="jp.ac.tsuda.LinkDataDB"%>
 <%@ page import="jp.ac.tsuda.Review"%>
 <%@ page import="java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%List<Review>list = LinkDataDB.read1();%>
-<%  %>
+<% //String rouge = (String) session.getAttribute("rouge"); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,9 +16,9 @@
     </head>
     
     <body>
-        <p><%= rouge %> についてのレビューを書き込む</p>
+        <p><c:out value="${rouge}"/>についてのレビューを書き込む</p>
 		<form action ="/reviewShow" method="post">
-		<input type="text" size="10" name="comment">
+		<input type="text" size="50" name="comment">
 		<input type="submit" value="送信">
 		</form>
 		<p>レビューの表示</p>
@@ -28,12 +28,10 @@
 		long id = data.getId();
 		String userName=data.getUserName();
 		String comment = data.getComment();
-		Date date = data.getDatetime();
 	%>
 	<tr>
 	<td><%=userName%></td>
-	<td><%=rouge%></td>
-	<td><%=date%></td>
+	<td><%=comment%></td>
 	</tr>
 	<%
 	}
