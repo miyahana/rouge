@@ -7,12 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ネットショップ</title>
     </head>
     <body>
         <p>ログアウトしました</p>
-        <a href="/welcome.jsp">トップへ</a>
+        >> <a href="/welcome.jsp">トップへ</a> <<
     </body>
+    </center>
 </html>

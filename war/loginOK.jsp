@@ -11,6 +11,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ストア</title>
@@ -18,9 +19,10 @@
     
     <body>
         <p>ようこそ <c:out value="${name}"/>さん</p>
-        <a href="/main">注文画面へ</a>
-        <a href="/logout">ログアウト</a>
-        <a href="/record">購入履歴</a>
-        <a href="/review.jsp">レビュー</a>
+        >> <a href="/main">注文画面へ</a> / 
+        <a href="/logout">ログアウト</a> / 
+        <a href="/record">購入履歴</a> / 
+        <a href="/review.jsp">レビュー</a> <<
     </body>
+    </center>
 </html>

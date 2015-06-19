@@ -10,6 +10,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,8 +19,8 @@
     <body>
         <h1>注文確認</h1>
         <c:out value="${name}"/>さん、ログイン中
-        <a href ="/welcome.jsp">トップへ</a>
-        <a href ="/logout">ログアウト</a>
+        >> <a href ="/welcome.jsp">トップへ</a> / 
+        <a href ="/logout">ログアウト</a> <<
        
         
         <p>以下のご注文でよろしいでしょうか</p>
@@ -35,7 +36,8 @@
         <p>CHANEL         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= getPrice.getRouge5() %>個   <%= getPrice.getPrice5() %> 円</p>
         <p> KiSHiORiGiNAL   &nbsp;&nbsp;<%= getPrice.getRouge6() %>個   <%= getPrice.getPrice6() %> 円</p>
         <p>合計            <%= getPrice.getSumRouge() %>個 <%= getPrice.getSumPrice() %> 円</p>
-        <a href ="/done">決定</a>
+        >> <a href ="/done">決定</a> <<
    
     </body>
+    </center>
 </html>

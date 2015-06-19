@@ -7,12 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ユーザー登録</title>
     </head>
     <body>
         <p>登録完了しました</p>
-       <a href="welcome.jsp">戻る</a>
+       >> <a href="welcome.jsp">戻る</a> <<
     </body>
+    </center>
 </html>

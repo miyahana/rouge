@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ユーザー登録</title>
@@ -18,4 +19,5 @@
          <input type="submit" value="確認">
         </form>  
     </body>
+    </center>
 </html>

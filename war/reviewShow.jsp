@@ -10,6 +10,7 @@
 <% //String rouge = (String) session.getAttribute("rouge"); %>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ストア</title>
@@ -37,6 +38,8 @@
 	}
 	%>
 	</table>
-    <a href="/review">戻る</a>
+	<br>
+    >> <a href="/review">戻る</a> <<
    	</body>
+   	</center>
 </html>

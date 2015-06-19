@@ -7,13 +7,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
         <h1>お買い上げありがとうございました</h1>
-        <a href ="/loginOK.jsp">トップへ</a>
-        <a href ="/logout">ログアウト</a>
+        >> <a href ="/loginOK.jsp">トップへ</a> / 
+        <a href ="/logout">ログアウト</a> <<
     </body>
+    </center>
 </html>

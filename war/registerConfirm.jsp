@@ -12,6 +12,7 @@ Data registerUser = (Data) session.getAttribute("registerUser");
 %>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ユーザー登録</title>
@@ -22,7 +23,8 @@ Data registerUser = (Data) session.getAttribute("registerUser");
         名前：<%= registerUser.getUserName() %><br>
         パスワード：<%= registerUser.getPass() %><br>
         </p>
-	<a href="/register">戻る</a>
-	<a href="/register1">登録</a>
+	>> <a href="/register">戻る</a> / 
+	<a href="/register1">登録</a> <<
     </body>
+    </center>
 </html>

@@ -8,6 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+	<center>
     <head>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,11 +16,12 @@
     </head>
     <body>
         <h1>注文画面</h1>
-        <c:out value="${name}"/>さん、ログイン中
-        <a href ="welcome.jsp">トップへ</a>
-        <a href ="/logout">ログアウト</a>
+        <c:out value="${name}"/>さん、ログイン中 >>
+        <a href ="welcome.jsp">トップへ</a> / 
+        <a href ="/logout">ログアウト</a> <<
         <br>
-        注文する個数を入力して確認ボタンを押してください。
+        <br>
+        注文する個数を入力して確認ボタンを押してください
         
         <p><a href="/confirm"></a></p>
         <form action ="/confirm" method="post">
@@ -51,4 +53,5 @@
         </form>
     
     </body>
+    </center>
 </html>
